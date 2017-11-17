@@ -1,0 +1,18 @@
+angular.module('sampleApp', [
+    'ngRoute',
+    'ngMaterial',
+    'appRoutes',
+    'authServ',
+    'MainCtrl',
+    'flightCtrl',
+    'flightService',
+    'GeekCtrl',
+    'GeekService',
+    'callbackCtrl',
+    'hotelCtrl',
+    'hotelService',
+    'tourCtrl',
+    'tourService',
+    'safariCtrl',
+    'safariService',
+]);

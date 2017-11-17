@@ -1,0 +1,81 @@
+<!-- <div class="jumbotron text-center">
+	<h1>Nerds and Proud</h1>
+
+	<p>{{ tagline }}</p>
+</div> -->
+
+<!-- <div>
+	<input type="date" name="From" id="">
+	<adm-dtp ng-model='date'></adm-dtp>
+</div> -->
+
+<div class="container-fluid text-center">
+	<form>
+		<div class="form-group row">
+			<!-- <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Email</label> -->
+			<div class="col-md-6">
+				<input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Enter a city,airport,country etc">
+			</div>
+			<div class="col-md-6">
+				<input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Enter a city,airport,country etc">
+			</div>
+		</div>
+		<div class="form-group row">
+			<!-- <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Email</label> -->
+			<div class="col-md-3">
+				<adm-dtp ng-model='departure'></adm-dtp>
+			</div>
+			<div class="col-md-3">
+				<adm-dtp ng-model='arrival'></adm-dtp>
+			</div>
+			<div class="col-md-2">
+				<select class="form-control" ng-model="adult" placeholder="Adults" id="exampleSelect1">
+							<option value="" selected>Adults</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						  </select>
+				<!-- <input type="email" class="form-control" id="lgFormGroupInput" placeholder="Adults">					 -->
+			</div>
+			<div class="col-md-2">
+					<select class="form-control" ng-model="child" placeholder="Adults" id="exampleSelect1">
+							<option value="" selected>Child</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						  </select>
+
+			</div>
+			<div class="col-md-2">
+					<select class="form-control" ng-model="infant" placeholder="Adults" id="exampleSelect1">
+							<option value="" selected>Infant</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						  </select>
+
+			</div>
+		</div>
+	</form>
+</div>

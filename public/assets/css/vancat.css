@@ -1,0 +1,64 @@
+
+.main{
+    
+    background-position: 30% 70%;
+    height: 100%;
+    width: 100%;
+    /* background-color: grey; */
+    background-image: url(../img/safari.jpg);
+}
+
+.bg-main{
+    background-size: cover;
+    background-position: 30% 70%;
+    background-image: url(../../image/background.jpg);
+}
+
+#navbarSupportedContent{
+    padding-left: 15%;
+}
+.navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+}
+.navbar-nav > li >a{
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 20;
+}
+.navbar-nav > li >a:hover{
+    color: ;
+    font-weight: 700;
+    font-size: 20;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+    background-color: aliceblue;
+}
+.footer> li> a{
+    color: black;
+    font-weight: 300;
+}
+.footer> li> a:hover{
+    color: darkgrey;
+    font-weight: 300;
+}
+.footer{
+    padding-left: 10%;
+}
+.cent{
+    /* padding-top: 0%; */
+}
+
+.style-1 input[type="text"] {
+    padding: 10px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+  }
+  .style-1 input[type="text"]:focus,
+  .style-1 input[type="text"].focus {
+    border: solid 1px #707070;
+    box-shadow: 0 0 5px 1px #969696;
+  }
+  input{
+      font-family: unset;
+  }

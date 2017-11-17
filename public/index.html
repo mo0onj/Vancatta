@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Starter Node and Angular</title>
+
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<!-- GOOGLE FONT -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+	<!-- =====================================
+	GOFAR assets
+	===================================== -->
+	<!-- CSS LIBRARY -->
+
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/css/lib/awe-booking-font.css">
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/css/lib/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/css/lib/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/css/lib/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/revslider-demo/css/settings.css">
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./gofarAssets/css/demo.css">
+	<link id="colorreplace" rel="stylesheet" type="text/css" href="./gofarAssets/css/colors/orange.css">
+
+
+	<!-- ============================================
+	 EXPLORE ASSETS
+================================================ -->
+	<!-- FONT CSS-->
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+	<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700">
+	<!-- <link type="text/css" rel="stylesheet" href="./ExploreAssets/font/font-icon/font-awesome/css/font-awesome.css"> -->
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/font/font-icon/font-flaticon/flaticon.css">
+	<!-- LIBRARY CSS-->
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/bootstrap/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/animate/animate.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/slick-slider/slick.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/slick-slider/slick-theme.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/selectbox/css/jquery.selectbox.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/please-wait/please-wait.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/fancybox/css/jquery.fancybox.css?v=2.1.5">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/fancybox/css/jquery.fancybox-buttons.css?v=1.0.5">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/fancybox/css/jquery.fancybox-thumbs.css?v=1.0.7">
+	<!-- STYLE CSS-->
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/css/layout.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/css/components.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/css/responsive.css">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/css/color.css">
+	<!--link(type="text/css", rel='stylesheet', href='assets/css/color-1/color-1.css', id="color-skins")-->
+	<link type="text/css" rel="stylesheet" href="#" id="color-skins">
+	<link type="text/css" rel="stylesheet" href="./ExploreAssets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+
+
+
+
+
+	<!-- ANGULAR MATERIAL -->
+	<link rel="stylesheet" href="./assets/css/angular-material.css">
+
+	<!-- CSS -->
+	<!-- <link rel="stylesheet" href="./assets/B4/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="./assets/FW/css/font-awesome.css">
+
+
+	<link rel="stylesheet" href="./css/ADM-dateTimePicker.css">
+
+
+
+	<!-- RZ-SLIDER -->
+	<link rel="stylesheet" href="./assets/css/rzslider.min.css">
+
+
+
+
+	<!-- CUSTOM CSS		 -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!-- custom styles -->
+
+	<link rel="stylesheet" href="./assets/css/vancat.css">
+
+	<link rel="stylesheet" href="./css/style.css">
+
+
+	<!-- JS -->
+	<!-- <script src="./libs/jquery/dist/jquery.js"></script> -->
+	<script src="./ExploreAssets/libs/jquery/jquery-2.2.3.min.js"></script>
+
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular-route/angular-route.js"></script>
+
+	<script src="./libs/angular-animate/angular-animate.js"></script>
+	<script src="./assets/js/angular-aria.min.js"></script>
+	<script src="./assets/js/angular-material.js"></script>
+	<script src="./assets/js/angular-messages.js"></script>
+	<!-- <script src="https://unpkg.com/@uirouter/angularjs@1.0.10/release/angular-ui-router.js"></script> -->
+	<script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+
+	<!-- AUTHO	 -->
+	<script src="https://cdn.auth0.com/js/lock/10.20/lock.min.js"></script>
+	<script type="text/javascript" src="libs/auth0.js/build/auth0.js"></script>
+	<script type="text/javascript" src="libs/angular-auth0/dist/angular-auth0.js"></script>
+	<script type="text/javascript" src="libs/angular-jwt/dist/angular-jwt.js"></script>
+
+	<!-- ANGULAR CUSTOM -->
+
+
+	<script src="js/app.js"></script>
+	<script src="js/appRoutes.js"></script>
+
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/flightCtrl.js"></script>
+	<script src="js/controllers/callbackCtrl.js"></script>
+	<script src="js/services/flightService.js"></script>
+	<script src="js/controllers/GeekCtrl.js"></script>
+	<script src="js/controllers/hotelCtrl.js"></script>
+	<script src="js/controllers/tourCtrl.js"></script>
+	<script src="js/controllers/safariCtrl.js"></script>
+	<script src="js/services/GeekService.js"></script>
+	<script src="js/services/hotelService.js"></script>
+	<script src="js/services/tourService.js"></script>
+	<script src="js/services/safariService.js"></script>
+	<script src="js/services/authService.js"></script>
+
+
+	<script src="./assets/js/ADM-dateTimePicker.js"></script>
+
+
+	<script src="./assets/js/rzslider.min.js"></script>
+	<script src="./assets/B4/js/tether.js"></script>
+
+	<!-- <script src="./assets/B4/js/bootstrap.js"></script> -->
+	<!-- <script src="./assets/js/materialize.min.js"></script> -->
+
+	<!-- =======================================	 -->
+	<!-- EXPLORE JS -->
+	<!-- ======================================= -->
+
+	<script src="./ExploreAssets/libs/js-cookie/js.cookie.js"></script>
+	<!-- LIBRARY JS-->
+	<script src="./ExploreAssets/libs/detect-browser/browser.js"></script>
+	<script src="./ExploreAssets/libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./ExploreAssets/libs/smooth-scroll/jquery-smoothscroll.js"></script>
+	<script src="./ExploreAssets/libs/wow-js/wow.min.js"></script>
+	<script src="./ExploreAssets/libs/slick-slider/slick.min.js"></script>
+	<script src="./ExploreAssets/libs/selectbox/js/jquery.selectbox-0.2.js"></script>
+	<script src="./ExploreAssets/libs/please-wait/please-wait.min.js"></script>
+	<script src="./ExploreAssets/libs/fancybox/js/jquery.fancybox.js"></script>
+	<script src="./ExploreAssets/libs/fancybox/js/jquery.fancybox-buttons.js"></script>
+	<script src="./ExploreAssets/libs/fancybox/js/jquery.fancybox-thumbs.js"></script>
+	<!--script(src="assets/libs/parallax/jquery.data-parallax.min.js")-->
+	<!-- MAIN JS-->
+	<script src="./ExploreAssets/js/main.js"></script>
+	<!-- LOADING JS FOR PAGE-->
+	<script src="./ExploreAssets/js/pages/home-page.js"></script>
+	<script src="./ExploreAssets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script> -->
+
+
+</head>
+
+<body ng-app="sampleApp" ng-controller="MainController">
+
+
+
+
+	<div id="bodyWrapper">
+
+		<div class="body-wrapper">
+			<!-- MENU MOBILE-->
+			<div class="wrapper-mobile-nav">
+				<div class="header-topbar">
+					<div class="topbar-search search-mobile">
+						<form class="search-form">
+							<div class="input-icon"><i class="btn-search fa fa-search"></i><input type="text" placeholder="Search here..." class="form-control" /></div>
+						</form>
+					</div>
+				</div>
+				<div class="header-main">
+					<div class="menu-mobile">
+						<ul class="nav-links nav navbar-nav">
+							<li class="dropdown"><a href="index.html" class="main-menu"><span class="text">Home</span></a><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span>
+								<ul class="dropdown-menu dropdown-menu-1">
+									<li><a href="index.html" class="link-page">Homepage default</a></li>
+									<li><a href="homepage-02.html" class="link-page">Homepage 02</a></li>
+									<li><a href="homepage-03.html" class="link-page">Homepage 03</a></li>
+									<li><a href="homepage-04.html" class="link-page">Homepage 04</a></li>
+								</ul>
+							</li>
+							<li><a href="about-us.html" class="main-menu"><span class="text">about</span></a></li>
+							<li class="dropdown"><a href="tour-result.html" class="main-menu"><span class="text">Tour</span></a><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span>
+								<ul class="dropdown-menu dropdown-menu-1">
+									<li><a href="tour-result.html" class="link-page">tour result</a></li>
+									<li><a href="tour-view.html" class="link-page">tour view</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="hotel-result.html" class="main-menu"><span class="text">packages</span></a><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span>
+								<ul class="dropdown-menu dropdown-menu-1">
+									<li><a href="hotel-result.html" class="link-page">hotel result</a></li>
+									<li><a href="hotel-view.html" class="link-page">hotel view</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="blog.html" class="main-menu"><span class="text">blog</span></a><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span>
+								<ul class="dropdown-menu dropdown-menu-1">
+									<li><a href="blog.html" class="link-page">blog list</a></li>
+									<li><a href="blog-detail.html" class="link-page">blog detail</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="car-rent-result.html" class="main-menu"><span class="text">page</span></a><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span>
+								<ul class="dropdown-menu dropdown-menu-1">
+									<li><a href="car-rent-result.html" class="link-page">car rent result</a></li>
+									<li><a href="cruises-result.html" class="link-page">cruises result</a></li>
+									<li><a href="404.html" class="link-page">page 404</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html" class="main-menu"><span class="text">contact</span></a></li>
+						</ul>
+						<ul class="list-unstyled list-inline login-widget">
+							<li><a href="#" class="item">login</a></li>
+							<li><a href="#" class="item">register</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- WRAPPER CONTENT-->
+			<div class="wrapper-content">
+				<!-- HEADER-->
+				<header>
+					<div class="bg-transparent header-01">
+						<div class="header-topbar">
+							<div class="container">
+								<ul class="topbar-left list-unstyled list-inline pull-left">
+									<li><a href="javascript:void(0)" class="country dropdown-text"><span>Country</span><i class="topbar-icon icons-dropdown fa fa-angle-down"></i></a>
+										<ul class="dropdown-topbar list-unstyled hide">
+											<li><a href="#" class="link">Vietnam</a></li>
+											<li><a href="#" class="link">Japan</a></li>
+											<li><a href="#" class="link">Korea</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:void(0)" class="language dropdown-text"><span>English</span><i class="topbar-icon icons-dropdown fa fa-angle-down"></i></a>
+										<ul class="dropdown-topbar list-unstyled hide">
+											<li><a href="#" class="link">Vietnam</a></li>
+											<li><a href="#" class="link">Japan</a></li>
+											<li><a href="#" class="link">Korea</a></li>
+										</ul>
+									</li>
+									<li><a href="javascript:void(0)" class="monney dropdown-text"><span>USD</span><i class="topbar-icon icons-dropdown fa fa-angle-down"></i></a>
+										<ul class="dropdown-topbar list-unstyled hide">
+											<li><a href="#" class="link">VND</a></li>
+											<li><a href="#" class="link">Euro</a></li>
+											<li><a href="#" class="link">JPY</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="topbar-right pull-right list-unstyled list-inline login-widget">
+										<li><a class="text-white item" href="javascript:;" ng-if="!auth.isAuthenticated()" ng-click="lock.show();">Login | Register</a></li>
+										<li><a class="text-white item" href="javascript:;" ng-if="auth.isAuthenticated()" ng-click="auth.logout();">Log out</a></li>	
+									<!-- <li><a href="sign-up.html" class="item">login</a></li>
+									<li><a href="register.html" class="item">register</a></li> -->
+								</ul>
+							</div>
+						</div>
+						<div class="header-main">
+							<div class="container">
+								<div class="header-main-wrapper">
+									<div class="hamburger-menu">
+										<div class="hamburger-menu-wrapper">
+											<div class="icons"></div>
+										</div>
+									</div>
+									<div class="navbar-header">
+										<div class="logo">
+											<a href="index.html" class="header-logo"><img src="./image/logo.png" alt="" /></a>
+										</div>
+									</div>
+									<nav class="navigation">
+										<ul class="nav-links nav navbar-nav">
+											<li class="dropdown active"><a href="javascript:void(0)" class="main-menu"><span class="text">Home</span><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span></a>
+												<ul class="dropdown-menu dropdown-menu-1">
+													<li><a href="index.html" class="link-page">Homepage default</a></li>
+													<li><a href="homepage-02.html" class="link-page">Homepage 02</a></li>
+													<li><a href="homepage-03.html" class="link-page">Homepage 03</a></li>
+													<li><a href="homepage-04.html" class="link-page">Homepage 04</a></li>
+												</ul>
+											</li>
+											<li><a href="about-us.html" class="main-menu"><span class="text">about</span></a></li>
+											<li class="dropdown"><a href="javascript:void(0)" class="main-menu"><span class="text">Tour</span><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span></a>
+												<ul class="dropdown-menu dropdown-menu-1">
+													<li><a href="tour-result.html" class="link-page">tour result</a></li>
+													<li><a href="tour-view.html" class="link-page">tour view</a></li>
+												</ul>
+											</li>
+											<li class="dropdown"><a href="javascript:void(0)" class="main-menu"><span class="text">packages</span><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span></a>
+												<ul class="dropdown-menu dropdown-menu-1">
+													<li><a href="hotel-result.html" class="link-page">hotel result</a></li>
+													<li><a href="hotel-view.html" class="link-page">hotel view</a></li>
+												</ul>
+											</li>
+											<li class="dropdown"><a href="javascript:void(0)" class="main-menu"><span class="text">blog</span><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span></a>
+												<ul class="dropdown-menu dropdown-menu-1">
+													<li><a href="blog.html" class="link-page">blog list</a></li>
+													<li><a href="blog-detail.html" class="link-page">blog detail</a></li>
+												</ul>
+											</li>
+											<li class="dropdown"><a href="javascript:void(0)" class="main-menu"><span class="text">page</span><span class="icons-dropdown"><i class="fa fa-angle-down"></i></span></a>
+												<ul class="dropdown-menu dropdown-menu-1">
+													<li><a href="car-rent-result.html" class="link-page">car rent result</a></li>
+													<li><a href="car-detail.html" class="link-page">car detail</a></li>
+													<li><a href="cruises-result.html" class="link-page">cruises result</a></li>
+													<li><a href="cruises-detail.html" class="link-page">cruises detail</a></li>
+													<li><a href="team-detail.html" class="link-page">team detail</a></li>
+													<li><a href="404.html" class="link-page">page 404</a></li>
+													<li><a href="faq.html" class="link-page">faq</a></li>
+												</ul>
+											</li>
+											<li><a href="contact.html" class="main-menu"><span class="text">contact</span></a></li>
+											<li class="button-search">
+												<p class="main-menu"><i class="fa fa-search"></i></p>
+											</li>
+										</ul>
+										<div class="nav-search hide">
+											<form><input type="text" placeholder="Search" class="searchbox" /><button type="submit" class="searchbutton fa fa-search"></button></form>
+										</div>
+									</nav>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<!-- WRAPPER-->
+				<div id="wrapper-content">
+					<!-- MAIN CONTENT-->
+					<div class="main-content">
+						<section class="page-banner homepage-default">
+							<div class="container">
+								<div class="homepage-banner-warpper">
+									<div class="homepage-banner-content">
+										<div class="group-title">
+											<h1 class="title">find cheap deals</h1>
+											<p class="text">discover the world you have never seen <span class="boder"></span></p>
+										</div>
+										<!-- <div class="group-btn"><a href="#" data-hover="CLICK ME" class="btn-click"><span class="text">go explore now</span><span class="icons fa fa-long-arrow-right"></span></a></div> -->
+									</div>
+								</div>
+							</div>
+						</section>
+						<section style="margin-top: -30%;">
+							<div class="tab-search tab-search-long tab-search-default">
+								<div class="container">
+									<div class="row">
+										<div class="col-xs-12">
+											<ul role="tablist" class="nav nav-tabs">
+												<li role="presentation" class="tab-btn-wrapper active"><a href="/flight" aria-controls="flight" role="tab" data-toggle="tab" class="tab-btn"><i class="flaticon-transport-1"></i><span class="text">FLIGHT</span><span class="xs">FIND YOUR FLIGHT</span></a></li>
+												<!-- <li role="presentation" class="tab-btn-wrapper"><a href="#transfer" aria-controls="transfer" role="tab" data-toggle="tab" class="tab-btn"><i class="flaticon-transport-3"></i><span class="text">TRANSFER</span><span class="xs">FIND TRANSFER</span></a></li> -->
+												<li role="presentation" class="tab-btn-wrapper"><a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab" class="tab-btn"><i class="flaticon-three"></i><span class="text">HOTEL</span><span class="xs">FIND HOTEL</span></a></li>
+												<li role="presentation" class="tab-btn-wrapper"><a href="#tours" aria-controls="tours" role="tab" data-toggle="tab" class="tab-btn"><i class="flaticon-people"></i><span class="text">TOURS</span><span class="xs">FIND TOURS</span></a></li>
+												<li role="presentation" class="tab-btn-wrapper"><a href="#car-rent" aria-controls="car-rent" role="tab" data-toggle="tab" class="tab-btn"><i class="flaticon-transport-7"></i><span class="text">CAR RENT</span><span class="xs">FIND CAR RENT</span></a></li>
+												<li role="presentation" class="tab-btn-wrapper"><a href="#cruises" aria-controls="cruises" role="tab" data-toggle="tab" class="tab-btn"><i class="flaticon-transport-4"></i><span class="text">CRUISES</span><span class="xs">FIND CRUISES</span></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="tab-content-bg">
+									<div class="container">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="tab-content">
+													<div role="tabpanel" id="flight" class="tab-pane fade in active">
+														<div class="find-widget find-flight-widget widget">
+															<h4 class="title-widgets">FIND YOUR FLIGHT</h4>
+															<form class="content-widget">
+																<div class="ffw-radio-selection"><span class="ffw-radio-btn-wrapper"><input type="radio" name="flight type" value="one way" id="flight-type-1" checked="checked" class="ffw-radio-btn"><label for="flight-type-1" class="ffw-radio-label">One Way</label></span>																	<span class="ffw-radio-btn-wrapper"><input type="radio" name="flight type" value="round trip" id="flight-type-2" class="ffw-radio-btn"><label for="flight-type-2" class="ffw-radio-label">Round Trip</label></span>																	<span class="ffw-radio-btn-wrapper"><input type="radio" name="flight type" value="multiple cities" id="flight-type-3" class="ffw-radio-btn"><label for="flight-type-3" class="ffw-radio-label">Multiple Cities</label></span>
+																	<div class="stretch">&nbsp;</div>
+																</div>
+																<div class="text-input small-margin-top">
+																	<div class="place text-box-wrapper"><label class="tb-label">Where do you want to go?</label>
+																		<div class="input-group">
+																			<md-autocomplete required md-selected-item="pfrom" md-search-text="searchText" md-item-text="item.name" md-menu-class="form-control"
+																			 md-search-text-change="changed();search()" md-no-cache="true" placeholder="Enter a city,airport,country etc"
+																			 md-items="item in query(searchText)" md-clear-button="true">
+																				<md-item-template>
+																					<span class="item-title">
+                                                        
+                                                                                                <span> {{item.name}} </span>
+																					</span>
+																					<span class="md-caption">
+                                                                                                <span>
+                                                                                                    <strong>Type :</strong> {{item.type}}
+                                                                                                </span>
+																					<span>
+                                                                                                    <strong>Country :</strong>{{item.id}}
+                                                                                                </span>
+																					</span>
+																				</md-item-template>
+
+																				<div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+																					<div ng-message="required">You <b>must</b> have a place in mind.</div>
+																				</div>
+																			</md-autocomplete>
+																		</div>
+																	</div>
+																	<div class="input-daterange">
+																		<div class="text-box-wrapper half"><label class="tb-label">Date From</label>
+																			<div class="input-group">
+																				<input ng-model="dateFrom" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i>
+																			</div>
+																		</div>
+																		<div class="text-box-wrapper half"><label class="tb-label">Date To</label>
+																			<div class="input-group">
+																				<input type="text" ng-model="dateTo" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="count adult-count text-box-wrapper"><label class="tb-label">Adult</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div>
+																	<div class="count child-count text-box-wrapper"><label class="tb-label">Child</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div>
+																	<button type="submit" ng-click="test()" data-hover="SEARCH NOW" class="btn btn-slide"><span class="text">SEARCH NOW</span><span class="icons fa fa-long-arrow-right"></span></></div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        
+													<div role="tabpanel" id="hotel" class="tab-pane fade">
+														<div class="find-widget find-hotel-widget widget">
+															<h4 class="title-widgets">FIND HOTEL</h4>
+															<form class="content-widget">
+																<div class="text-input small-margin-top">
+																	<div class="place text-box-wrapper"><label class="tb-label">Where do you want to go?</label>
+																		<div class="input-group"><input type="text" placeholder="Write the place" class="tb-input"></div>
+																	</div>
+																	<div class="input-daterange">
+																		<div class="text-box-wrapper half"><label class="tb-label">Check in</label>
+																			<div class="input-group"><input type="text" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i></div>
+																		</div>
+																		<div class="text-box-wrapper half"><label class="tb-label">Check out</label>
+																			<div class="input-group"><input type="text" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i></div>
+																		</div>
+																	</div>
+																	<div class="count adult-count text-box-wrapper"><label class="tb-label">Adult</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div>
+																	<div class="count child-count text-box-wrapper"><label class="tb-label">Child</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div><button type="submit" data-hover="SEARCH NOW" class="btn btn-slide"><span class="text">SEARCH NOW</span><span class="icons fa fa-long-arrow-right"></span></button></div>
+															</form>
+														</div>
+													</div>
+													<div role="tabpanel" id="tours" class="tab-pane fade">
+														<div class="find-widget find-tours-widget widget">
+															<h4 class="title-widgets">FIND TOURS</h4>
+															<form class="content-widget">
+																<div class="text-input small-margin-top">
+																	<div class="place text-box-wrapper"><label class="tb-label">Where do you want to go?</label>
+																		<div class="input-group"><input type="text" placeholder="Write the place" class="tb-input"></div>
+																	</div>
+																	<div class="date text-box-wrapper"><label class="tb-label">When do you want to go?</label>
+																		<div class="input-group"><input type="text" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i></div>
+																	</div>
+																	<div class="count adult-count text-box-wrapper"><label class="tb-label">Adult</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div>
+																	<div class="count child-count text-box-wrapper"><label class="tb-label">Child</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div><button type="submit" data-hover="SEARCH NOW" class="btn btn-slide"><span class="text">SEARCH NOW</span><span class="icons fa fa-long-arrow-right"></span></button></div>
+															</form>
+														</div>
+													</div>
+													<div role="tabpanel" id="car-rent" class="tab-pane fade">
+														<div class="find-widget find-car-widget widget">
+															<h4 class="title-widgets">FIND CAR</h4>
+															<form class="content-widget">
+																<div class="text-input small-margin-top">
+																	<div class="place text-box-wrapper"><label class="tb-label">Where do you want to go?</label>
+																		<div class="input-group"><input type="text" placeholder="Write the place" class="tb-input"></div>
+																	</div>
+																	<div class="input-daterange">
+																		<div class="text-box-wrapper half"><label class="tb-label">Start date</label>
+																			<div class="input-group"><input type="text" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i></div>
+																		</div>
+																		<div class="text-box-wrapper half"><label class="tb-label">Return date</label>
+																			<div class="input-group"><input type="text" placeholder="MM/DD/YY" class="tb-input"><i class="tb-icon fa fa-calendar input-group-addon"></i></div>
+																		</div>
+																	</div>
+																	<div class="count car-count text-box-wrapper"><label class="tb-label">No. of Car</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div><button type="submit" data-hover="SEARCH NOW" class="btn btn-slide"><span class="text">SEARCH NOW</span><span class="icons fa fa-long-arrow-right"></span></button></div>
+															</form>
+														</div>
+													</div>
+													<div role="tabpanel" id="cruises" class="tab-pane fade">
+														<div class="find-widget find-cruises-widget widget">
+															<h4 class="title-widgets">FIND CRUISES</h4>
+															<form class="content-widget">
+																<div class="ffw-radio-selection"><span class="ffw-radio-btn-wrapper"><input type="radio" name="flight type" value="one way" id="cruises-type-1" checked="checked" class="ffw-radio-btn"><label for="cruises-type-1" class="ffw-radio-label">One Way</label></span>																	<span class="ffw-radio-btn-wrapper"><input type="radio" name="flight type" value="round trip" id="cruises-type-2" class="ffw-radio-btn"><label for="cruises-type-2" class="ffw-radio-label">Round Trip</label></span>																	<span class="ffw-radio-btn-wrapper"><input type="radio" name="flight type" value="multiple cities" id="cruises-type-3" class="ffw-radio-btn"><label for="cruises-type-3" class="ffw-radio-label">Multiple Places</label></span>
+																	<div class="stretch">&nbsp;</div>
+																</div>
+																<div class="text-input small-margin-top">
+																	<div class="place text-box-wrapper"><label class="tb-label">Where do you want to go?</label>
+																		<div class="input-group"><input type="text" placeholder="Write the place" class="tb-input"></div>
+																	</div>
+																	<div class="count time-count text-box-wrapper"><label class="tb-label">Time</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">08:00</option><option>10:00</option><option>12:00</option><option>14:00</option><option>16:00</option><option>18:00</option></select></div>
+																	</div>
+																	<div class="count adult-count text-box-wrapper"><label class="tb-label">Adult</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div>
+																	<div class="count child-count text-box-wrapper"><label class="tb-label">Child</label>
+																		<div class="select-wrapper">
+																			<!--i.fa.fa-chevron-down--><select class="form-control custom-select selectbox"><option selected="selected">0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
+																	</div><button type="submit" data-hover="SEARCH NOW" class="btn btn-slide"><span class="text">SEARCH NOW</span><span class="icons fa fa-long-arrow-right"></span></button></div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="about-us layout-1 padding-top padding-bottom">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-7">
+										<div class="group-title">
+											<div class="sub-title">
+												<p class="text">be born again</p><i class="icons flaticon-people"></i></div>
+											<h2 class="main-title">we are exploore</h2>
+										</div>
+										<div class="about-us-wrapper">
+											<p class="text">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eim ad minim
+												veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat uisas aute irure dolor
+												ullamco laboris nisi in reprehenderit.</p>
+											<div class="group-list">
+												<ul class="list-unstyled about-us-list">
+													<li>
+														<p class="text">First Class Flights</p>
+													</li>
+													<li>
+														<p class="text">5 Star Accommodations</p>
+													</li>
+													<li>
+														<p class="text">Inclusive Packages</p>
+													</li>
+													<li>
+														<p class="text">Latest Model Vehicles</p>
+													</li>
+												</ul>
+												<ul class="list-unstyled about-us-list">
+													<li>
+														<p class="text">Handpicked Hotels</p>
+													</li>
+													<li>
+														<p class="text">Accesibility managment</p>
+													</li>
+													<li>
+														<p class="text">10 Languages available</p>
+													</li>
+													<li>
+														<p class="text">+120 Premium city tours</p>
+													</li>
+												</ul>
+											</div>
+											<div class="group-button"><a href="tour-result.html" class="btn btn-maincolor">purchase now</a><a href="about-us.html" class="btn">read more</a></div>
+										</div>
+									</div>
+									<div class="col-md-5">
+										<div data-wow-delay="0.5s" class="about-us-image wow zoomIn"><img src="ExploreAssets/images/homepage/about-us-1.jpg" alt="" class="img-responsive"></div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+
+
+
+
+					</div>
+					<!-- BUTTON BACK TO TOP-->
+					<div id="back-top"><a href="#top" class="link"><i class="fa fa-angle-double-up"></i></a></div>
+				</div>
+				<!-- FOOTER-->
+				<footer>
+					<div class="footer-main padding-top padding-bottom">
+						<div class="container">
+							<div class="footer-main-wrapper">
+								<a href="index.html" class="logo-footer"><img src="ExploreAssets/images/logo/logo-white-color-1.png" alt="" class="img-responsive" /></a>
+								<div class="row">
+									<div class="col-2">
+										<div class="col-md-3 col-xs-5">
+											<div class="contact-us-widget widget">
+												<div class="title-widget">contact us</div>
+												<div class="content-widget">
+													<div class="info-list">
+														<ul class="list-unstyled">
+															<li><i class="icons fa fa-map-marker"></i><a href="#" class="link">132, My Street, Kingston, New York 12401</a></li>
+															<li><i class="icons fa fa-phone"></i><a href="#" class="link">270 - 188 - 6026</a></li>
+															<li><i class="icons fa fa-envelope-o"></i><a href="#" class="link">domain@expooler.com</a></li>
+														</ul>
+													</div>
+													<div class="form-email">
+														<p class="text">Sign up for our mailing list to get latest updates and offers.</p>
+														<form action="index.html">
+															<div class="input-group"><input type="text" placeholder="Email address" class="form-control form-email-widget" /><span class="input-group-btn"><button type="submit" class="btn-email">&#10004;</button></span></div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-2 col-xs-3">
+											<div class="booking-widget widget text-center">
+												<div class="title-widget">book now</div>
+												<div class="content-widget">
+													<ul class="list-unstyled">
+														<li><a href="#" class="link">Flights</a></li>
+														<li><a href="#" class="link">Tours</a></li>
+														<li><a href="#" class="link">Packages</a></li>
+														<li><a href="#" class="link">Transfer</a></li>
+														<li><a href="#" class="link">Car Rent</a></li>
+														<li><a href="#" class="link">Cruises</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-2 col-xs-4">
+											<div class="explore-widget widget">
+												<div class="title-widget">explore</div>
+												<div class="content-widget">
+													<ul class="list-unstyled">
+														<li><a href="#" class="link">Tour Singapore City</a></li>
+														<li><a href="#" class="link">Tour Manila City</a></li>
+														<li><a href="#" class="link">Tour New York City</a></li>
+														<li><a href="#" class="link">Tour Sanghai City</a></li>
+														<li><a href="#" class="link">Tour Hongkong City</a></li>
+														<li><a href="#" class="link">Tour Tokyo City</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="col-md-2 col-xs-6">
+											<div class="top-deals-widget widget">
+												<div class="title-widget">top deals</div>
+												<div class="content-widget">
+													<ul class="list-unstyled">
+														<li><a href="#" class="link">Tour Packages Singapore</a></li>
+														<li><a href="#" class="link">Tour Packages Manila</a></li>
+														<li><a href="#" class="link">Tour Packages New York</a></li>
+														<li><a href="#" class="link">Tour Packages Sanghai</a></li>
+														<li><a href="#" class="link">Tour Packages Hongkong</a></li>
+														<li><a href="#" class="link">Tour Packages Tokyo</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-3 col-xs-6">
+											<div class="destination-widget widget">
+												<div class="title-widget">Destination</div>
+												<div class="content-widget">
+													<ul class="list-unstyled list-inline">
+														<li>
+															<a href="#" class="thumb"><img src="ExploreAssets/images/footer/gallery-01.jpg" alt="" class="img-responsive" /></a>
+														</li>
+														<li>
+															<a href="#" class="thumb"><img src="ExploreAssets/images/footer/gallery-02.jpg" alt="" class="img-responsive" /></a>
+														</li>
+														<li>
+															<a href="#" class="thumb"><img src="ExploreAssets/images/footer/gallery-03.jpg" alt="" class="img-responsive" /></a>
+														</li>
+														<li>
+															<a href="#" class="thumb"><img src="ExploreAssets/images/footer/gallery-04.jpg" alt="" class="img-responsive" /></a>
+														</li>
+														<li>
+															<a href="#" class="thumb"><img src="ExploreAssets/images/footer/gallery-05.jpg" alt="" class="img-responsive" /></a>
+														</li>
+														<li>
+															<a href="#" class="thumb"><img src="ExploreAssets/images/footer/gallery-06.jpg" alt="" class="img-responsive" /></a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hyperlink">
+						<div class="container">
+							<div class="slide-logo-wrapper">
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-01.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-02.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-03.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-04.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-05.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-06.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-01.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-02.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-03.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-04.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-05.png" alt="" class="img-responsive" /></a>
+								</div>
+								<div class="logo-item">
+									<a href="#" class="link"><img src="ExploreAssets/images/footer/logo-06.png" alt="" class="img-responsive" /></a>
+								</div>
+							</div>
+							<div class="social-footer">
+								<ul class="list-inline list-unstyled">
+									<li><a href="#" class="link facebook"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#" class="link twitter"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#" class="link pinterest"><i class="fa fa-pinterest-p"></i></a></li>
+									<li><a href="#" class="link google"><i class="fa fa-google"></i></a></li>
+								</ul>
+							</div>
+							<div class="name-company">&copy; Designed by SWLABS.</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<div class="theme-setting">
+			<div class="theme-loading">
+				<div class="theme-loading-content">
+					<div class="dots-loader"></div>
+				</div>
+			</div>
+			<!-- <a href="javascript:;" class="btn-theme-setting"><i class="fa fa-tint"></i></a> -->
+			<div class="content-theme-setting">
+				<h2 class="title">setting color</h2>
+				<ul class="list-unstyled list-inline color-skins">
+					<li data-color="color-1"></li>
+					<li data-color="color-2"></li>
+					<li data-color="color-3"></li>
+					<li data-color="color-4"></li>
+					<li data-color="color-5"></li>
+					<li data-color="color-6"></li>
+					<li data-color="color-7"></li>
+					<li data-color="color-8"></li>
+					<li data-color="color-9"></li>
+					<li data-color="color-10"></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<!-- <div ng-view></div> -->
+
+
+
+
+	<!-- <div class="container-fluid">
+
+		<div class="bg-main">
+			<div class="container-fluid text-right text-white h5 lead">
+				<span><i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i></span>+18005905791 |
+				<a class="text-white" href=""> English <span><img src="./image/en.png" class="img-circle img-responsive" width="20" height="20" alt=""></span></a>				|
+				<a class="text-white" href=""> USD </a> |
+				<a class="text-white" href=""> See Deals </a> |
+				<a class="text-white" href=""> Go To The Casino </a> |
+				<a class="text-white" href="javascript:;" ng-if="!auth.isAuthenticated()" ng-click="lock.show();">Login/Sign Up</a>
+				<a class="text-white" href="javascript:;" ng-if="auth.isAuthenticated()" ng-click="auth.logout();">Log out</a>
+			</div>
+
+
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+
+			<div class="container-fluid">
+				<img src="./image/fb.png" width="50" height="50" alt="">
+				<img src="./image/tw.png" width="50" height="50" alt="">
+
+			</div>
+			<br>
+		</div>
+
+		<br>
+		<br>
+
+		<div class="container text-center">
+			<div class="display-3">
+				Our Current Special Offers
+			</div>
+
+			<hr>
+
+			<div class="h2">
+				Discover all our special offers
+			</div>
+		</div>
+
+		<br>
+		<br> 2
+
+		<div class="container-fluid ">
+			<nav class="navbar  navbar-toggleable-md ">
+
+				<div class="text-center">
+
+					<ul class="navbar-nav footer  mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Contact Us</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">Terms & Conditions</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Privacy Policy</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Cookie Usage</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About Us</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">FAQ</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">Careers</a>
+						</li>
+
+					</ul>
+
+
+				</div>
+			</nav>
+			<p class="text-center"><strong>
+                &copy;Vancatta. All rights reserved
+                </strong></p>
+		</div>
+		<br>
+		<br>
+
+
+
+
+	</div> -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,488 @@
+<!-- PAGE WRAP -->
+<div id="page-wrap">
+
+    <span>
+        <!-- <div class="container">
+            <rzslider
+            rz-slider-model="slider.min"
+            rz-slider-high="slider.max"
+            rz-slider-options="slider.options"></rzslider>
+        </div> -->
+        <!-- <div id="slider">
+        
+      </div> -->
+
+      <!-- <a href="" ng-click="test()" class="btn btn-info">test</a> -->
+    </span>
+
+    <div class="container-fluid bg-border bg-warning">
+        <form class="" name="searchForm" ng-submit="$event.preventDefault()">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group row ">
+                        <label for="inputHorizontalSuccess" class="offset-1 col-3 col-form-label text-darken-4 txtblack">From</label>
+                        <label for="inputHorizontalSuccess" class="col-3 col-form-label text-darken-4 txtblack">To</label>
+                        <label for="inputHorizontalSuccess" class="col-2 col-form-label text-darken-4 txtblack">Date From</label>
+                        <label for="inputHorizontalSuccess" class="col-2 col-form-label text-darken-4 txtblack">Date To</label>
+                        <label for="inputHorizontalSuccess" class="col-1 col-form-label ">---</label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-3 offset-md-1">
+                    <!--                           <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">-->
+                    <md-autocomplete required md-selected-item="pfrom" md-search-text="searchText" md-item-text="item.name" md-menu-class="form-control"
+                        md-search-text-change="changed();search()" md-no-cache="true" md-items="item in query(searchText)" md-clear-button="true">
+                        <md-item-template>
+                            <span class="item-title">
+
+                                        <span> {{item.name}} </span>
+                            </span>
+                            <span class="md-caption">
+                                        <span>
+                                            <strong>Type :</strong> {{item.type}}
+                                        </span>
+                            <span>
+                                            <strong>Country :</strong>{{item.id}}
+                                        </span>
+                            </span>
+                        </md-item-template>
+
+                        <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                            <div ng-message="required">You <b>must</b> have a place in mind.</div>
+                        </div>
+                    </md-autocomplete>
+                </div>
+
+                <div class="col-md-3">
+                    <!--                           <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">-->
+                    <md-autocomplete required md-selected-item="ctrl.to" md-search-text="searchTex" md-item-text="item.name" md-menu-class="form-control"
+                        md-no-cache="true" md-search-text-change="search()" md-items="item in query(searchTex)" md-clear-button="true"
+                        required>
+
+                        <md-item-template>
+                            <span class="item-title">
+
+                                        <span> {{item.name}} </span>
+                            </span>
+                            <span class="item-metadata">
+                                        <span>
+                                            Type :<strong>{{item.type}}</strong> 
+                                        </span>
+                            <span>
+                                            Country :<strong>{{item.id}}</strong>
+                                        </span>
+                            </span>
+                        </md-item-template>
+                        <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                            <div ng-message="required">You <b>must</b> have a place in mind.</div>
+                        </div>
+                    </md-autocomplete>
+                </div>
+                <div class="col-md-2">
+                    <!--                           <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">-->
+                    <!--                           <input type="text" class="awe-calendar" value="Date">-->
+                    <input type="text" ng-model="dateFrom" ng-change="formatDate(dateFrom)" data-provide="datepicker" data-date-format="dd/mm/yyyy"
+                        class="form-control awe-calendar">
+
+                </div>
+                <div class="col-md-2">
+                    <!--                           <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">-->
+                    <input id="date" type="text" ng-model="dateTo" ng-change="formatDate(dateTo)" data-provide="datepicker" data-date-format="dd/mm/yyyy"
+                        class="form-control ">
+
+                </div>
+                <div class="col-md-1">
+                    <!--                           <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">-->
+                    <a class="btn text-primary form-control awe-btn" ng-click="ctrl.search()">Search</a>
+
+                </div>
+
+
+
+            </div>
+            <md-progress-linear ng-show="ctrl.progress" md-mode="query"></md-progress-linear>
+        </form>
+
+
+    </div>
+
+
+    <!-- LOADING -->
+
+    <div class="container-fluid text-center" ng-show="loading">
+        <div class="login-fullwidith" style="width: 866px;height: 615px;">
+
+            <!-- Login Wrap  -->
+            <div class="login-wrap2">
+                <div class="center">
+                    <img src="images/logo.png" class="search-logo" alt="logo" /><br/><br/>
+                    <span class="opensans size18 caps bold blue">We're on it! Searching the BEST PRICES.</span><br/>
+                    <span class="opensans size18 grey xsmall">In a few moments, you'll be celebrating flight options galore!</span>
+                    <br/><br/>
+                    <img src="../../../travelAssets/updates/update1/img/loading.gif" alt="" />
+                    <br/><br/>
+
+                </div>
+                <div class="searchingbg">
+                    <ul class="leftatr">
+                        <li>From</li>
+                        <li>To</li>
+                        <li>Depart</li>
+                        <li>Return</li>
+                        <li>Traveler</li>
+                    </ul>
+                    <ul class="rightatr">
+                        <li>United kingdom - London</li>
+                        <li>U.S.A. - New York</li>
+                        <li>02.03.2014</li>
+                        <li>02.04.2014</li>
+                        <li>2</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End of Login Wrap  -->
+
+        </div>
+    </div>
+
+    <!-- LOADIND END -->
+
+    <section class="filter-page" ng-hide="loading">
+        <div class="sidePad">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-top">
+
+                        <div class="" ng-show="length">Showing {{ctrl.flights.length}} of {{length}} total results.</div>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-pull-9 bg-white">
+                    <div class="page-sidebar">
+                        <div class="sidebar-title">
+                            <h2>Flight</h2>
+
+                            <!-- <br>
+                            <button class="btn" ng-click="test()">Test</button>
+                            <br> -->
+
+                            <div class="clear-filter">
+                                <a href="#">Clear all</a>
+                            </div>
+                        </div>
+                        <!-- WIDGET -->
+                        <div class="widget widget_has_radio_checkbox_text">
+                            <h3>Flight Type</h3>
+                            <div class="widget_content">
+
+                                <md-switch class="md-primary" aria-label="flightType" ng-change="ctrl.fType(flightType)" ng-model="flightType">
+
+                                </md-switch>
+                                <span class="txtblack">{{ fTypeText }}</span>
+
+
+                            </div>
+                        </div>
+                        <!-- END / WIDGET -->
+
+                        <!-- WIDGET -->
+
+
+                        <input type="text" ng-model="slider.min" >
+                        <input type="text" ng-model="slider.max" >
+
+
+                        <div class="widget widget_price_filter">
+                            <h3>Price Level</h3>
+
+                            <rzslider
+                            rz-slider-model="slider.min"
+                            rz-slider-high="slider.max"
+                            rz-slider-options="slider.options"></rzslider>
+
+                            <!-- <div id="slider"></div> -->
+
+
+
+
+
+
+
+                        </div>
+                        <!-- END / WIDGET -->
+
+
+                        <!-- WIDGET -->
+                        <div class="widget widget_price_filter">
+                            <h3>Airlines</h3>
+
+                            <md-input-container>
+                                <label></label>
+                                <md-select ng-model="selectedFlights" aria-label="airports" md-on-close="clearSearchTerm()" md-on-open="loadAirlines()" data-md-container-class="selectdemoSelectHeader"
+                                    multiple>
+                                    <md-select-header class="demo-select-header">
+                                        <!-- <input ng-model="searchTerm"
+                                           type="search"
+                                           placeholder="Search for a vegetable.."
+                                           class="demo-header-searchbox md-text"> -->
+                                    </md-select-header>
+                                    <md-optgroup label="">
+                                        <md-option ng-value="item" ng-repeat="item in ctrl.workItems ">{{ctrl.airls(item)}}</md-option>
+                                    </md-optgroup>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <!-- END / WIDGET -->
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-9 col-md-push-3 ">
+                    <div class="filter-page__content">
+                        <div class="filter-item-wrapper">
+                            <!-- ITEM -->
+                            <div class="flight-item" ng-click="detailToggle = !detailToggle" ng-repeat="item in ctrl.flights  | limitTo: currentNum | filter:minFilter | filter:maxFilter ">
+
+
+
+                                <div class="item-media">
+                                    <div class="image-cover">
+                                        <img src="https://images.kiwi.com/airlines/64/{{item.airlines[0]}}.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item-body">
+                                    <div class="item-title">
+                                        <h2>
+                                            <a href="">{{ctrl.airls(item.airlines[0])}} : {{item.cityFrom}} {{item.routes[0][0]}} - {{item.routes[0][1]}} {{item.cityTo}}</a>
+                                        </h2>
+                                    </div>
+                                    <table class="item-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="route">Route</th>
+                                                <th class="depart">Depart</th>
+                                                <th class="arrive">Arrive</th>
+                                                <th class="duration">Duration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="route">
+                                                    <ul ng-repeat="route in item.routes[0]">
+                                                        <li>{{route}} <i class="awe-icon awe-icon-arrow-right"></i></li>
+                                                    </ul>
+                                                </td>
+                                                <td class="depart">
+                                                    <span>{{ctrl.time(item.dTimeUTC)}}</span>
+                                                </td>
+                                                <td class="arrive">
+                                                    <span>{{ctrl.time(item.aTimeUTC)}}</span>
+                                                </td>
+                                                <td class="duration">
+                                                    <span>{{item.fly_duration}}</span>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="item-price-more">
+                                    <div class="price">
+                                        <span class="amount">&euro; {{item.price}}</span> exclude Fare
+                                    </div>
+                                    <a href="/flight/booking/w" ng-click="ctrl.book(item)" class="awe-btn">Book now</a>
+                                </div>
+
+
+                                <div class="" ng-show="detailToggle">
+                                    <div class="item-media">
+                                        <div class="image-cover">
+                                            <!-- <img src="https://images.kiwi.com/airlines/64/{{item.airlines[0]}}.png" alt=""> -->
+                                        </div>
+                                    </div>
+                                    <div class="item-body">
+                                        <div class="item-title txtblack">
+                                            <span> <strong> Duration</strong></span>
+                                            <span>{{item.fly_duration}}</span>
+
+                                            <table ng-repeat="route in item.route">
+                                                <!-- <table > -->
+                                                <tr>
+
+                                                    <td>
+                                                        <h5><span><i class="fa fa-calendar" aria-hidden="true"></i></span></h5>
+                                                    </td>
+                                                    <td>
+                                                        <div class="container-fluid">
+                                                            <h5>{{ctrl.dateConv(route.dTimeUTC)}}</h5>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span>Flight : {{route.airline}} - {{route.flight_no}}</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="">
+                                                    <td><img src="../../../assets/img/plane.png" height="20" width="20" alt=""></td>
+                                                    <td>
+                                                        <div class="container-fluid border bigfont">
+
+                                                            <strong>{{ctrl.timeConv(route.dTimeUTC)}}</strong>
+                                                            <span>{{route.cityFrom}}</span>
+                                                            <br>
+                                                            <strong>{{ctrl.timeConv(route.aTimeUTC)}}</strong>
+                                                            <span>{{route.cityTo}}</span>
+
+
+                                                        </div>
+
+                                                    </td>
+                                                    <td class="bg-faded">
+                                                        <img src="https://images.kiwi.com/airlines/64/{{route.airline}}.png" width="50" height="50" alt="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!-- END / ITEM -->
+
+
+
+                            <!-- ITEM -->
+                            <div class="flight-item">
+                                <div class="item-media">
+                                    <div class="image-cover">
+                                        <img src="https://images.kiwi.com/airlines/64/df.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item-body">
+                                    <div class="item-title">
+                                        <h2>
+                                            <a href="" ng-click="detailToggle = !detailToggle"> Kuch Bhi? </a>
+                                        </h2>
+                                    </div>
+                                    <table class="item-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="route">Route</th>
+                                                <th class="depart">Depart</th>
+                                                <th class="arrive">Arrive</th>
+                                                <th class="duration">Duration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="route">
+                                                    <ul>
+                                                        <li> <i class="awe-icon awe-icon-arrow-right"></i></li>
+                                                    </ul>
+                                                </td>
+                                                <td class="depart">
+                                                    <span></span>
+                                                </td>
+                                                <td class="arrive">
+                                                    <span></span>
+                                                </td>
+                                                <td class="duration">
+                                                    <span></span>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="item-price-more">
+                                    <div class="price">
+                                        <span class="amount">&euro;</span> exclude Fare
+                                    </div>
+                                    <a href="/flight/payment" ng-click="ctrl.book(item)" class="awe-btn">Book now</a>
+                                </div>
+
+                                <div class="" ng-show="detailToggle">
+                                    <div class="item-body">
+                                        <div class="item-title txtblack">
+                                            <span> <strong> Duration</strong></span>
+                                            <span>{{item.fly_duration}}</span>
+                                            <table ng-repeat="route in ctrl.flights.route">
+                                                <!-- <table > -->
+                                                <tr>
+
+                                                    <td>
+                                                        <h5><span><i class="fa fa-calendar" aria-hidden="true"></i></span></h5>
+                                                    </td>
+                                                    <td>
+                                                        <div class="container-fluid">
+                                                            <h5> {{ctrl.dateConv(route.dTime)}}</h5>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="">
+                                                    <td><img src="../../../assets/img/plane.png" height="20" width="20" alt=""></td>
+                                                    <td>
+                                                        <div class="container-fluid border bigfont">
+
+                                                            <strong>{{ctrl.timeConv(route.dTime)}}</strong>
+                                                            <span>{{route.cityFrom}}</span>
+                                                            <br>
+                                                            <strong>{{ctrl.timeConv(route.aTime)}}</strong>
+                                                            <span>{{route.cityTo}}</span>
+
+
+                                                        </div>
+                                                        <td class="bg-faded">
+                                                            <img src="https://images.kiwi.com/airlines/64/{{route.airline}}.png" width="50" height="50" alt="">
+                                                        </td>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- END / ITEM -->
+
+                        </div>
+
+
+                        <!-- PAGINATION -->
+                        <div class="page__pagination">
+                            <span class="pagination-prev"><i class="fa fa-caret-left"></i></span>
+                            <span class="current">1</span>
+                            <a href="">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#" class="pagination-next"><i class="fa fa-caret-right"></i></a>
+                        </div>
+                        <!-- END / PAGINATION -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+</div>
+<!-- END / PAGE WRAP -->

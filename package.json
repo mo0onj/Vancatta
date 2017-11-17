@@ -1,0 +1,19 @@
+{
+  "name": "Vancatta",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author":"Nabeel Javed",
+  "description": "Travel Portal",
+  "dependencies": {
+    "adm-dtp": "^1.2.0",
+    "angularjs-datepicker": "^2.1.23",
+    "body-parser": "~1.4.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "express-jwt": "^3.3.0",
+    "jwks-rsa": "~1.1.1",
+    "method-override": "~2.0.2",
+    "mongoose": "~3.8.0",
+    "morgan": "^1.9.0"
+  }
+}

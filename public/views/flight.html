@@ -1,0 +1,176 @@
+<!-- <div class="jumbotron text-center">
+	<h1>Nerds and Proud</h1>
+
+	<p>{{ tagline }}</p>
+</div> -->
+
+<!-- <div>
+	<input type="date" name="From" id="">
+	<adm-dtp ng-model='date'></adm-dtp>
+</div> -->
+
+<div class="container-fluid text-center cent">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <a href="/"><img src="./assets/img/logo_without.png" class="img-fluid" height="400px" width="400px" alt=""></a>
+            <div class="text-center lead ">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/flight" class="text-white"><i class="fa fa-plane fa-lg fa-fw" aria-hidden="true"></i>Flights |</a></li>
+                    <li class="list-inline-item"><a href="/hotel" class="text-white"><i class="fa fa-bed fa-lg fa-fw" aria-hidden="true"></i>Hotels |</a></li>
+                    <li class="list-inline-item"><a href="/tours" class="text-white"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>Tours |</a></li>
+                    <li class="list-inline-item"><a href="/safari" class="text-white"><i class="fa fa-compass fa-lg fa-fw" aria-hidden="true"></i>Safari |</a></li>
+                    <li class="list-inline-item"><a href="/geeks" class="text-white"><i class="fa fa-compass fa-lg fa-fw" aria-hidden="true"></i>Activities</a></li>
+                </ul>
+            </div>
+
+
+
+
+            
+
+            <div class="container-fluid  txt-left">
+                <form>
+                    <div class="form-group row">
+                        <!-- <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Email</label> -->
+                        <div class="col-md-6">
+                            <label for="" class="text-white">From</label>
+
+                            <md-autocomplete required md-selected-item="pfrom" md-search-text="searchText" md-item-text="item.name" md-menu-class="form-control"
+                                md-search-text-change="changed();search()" md-no-cache="true" placeholder="Enter a city,airport,country etc"
+                                md-items="item in query(searchText)" md-clear-button="true">
+                                <md-item-template>
+                                    <span class="item-title">
+    
+                                            <span> {{item.name}} </span>
+                                    </span>
+                                    <span class="md-caption">
+                                            <span>
+                                                <strong>Type :</strong> {{item.type}}
+                                            </span>
+                                    <span>
+                                                <strong>Country :</strong>{{item.id}}
+                                            </span>
+                                    </span>
+                                </md-item-template>
+
+                                <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                                    <div ng-message="required">You <b>must</b> have a place in mind.</div>
+                                </div>
+                            </md-autocomplete>
+                            <!-- <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Enter a city,airport,country etc"> -->
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label text-white">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="return"> Return
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label text-white">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" checked id="inlineRadio2" value="oneway"> One Way
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="" class="text-white">To</label>
+                            <md-autocomplete required md-selected-item="ctrl.to" md-search-text="searchTex" md-item-text="item.name" md-menu-class="form-control"
+                            md-no-cache="true" md-search-text-change="search()" placeholder="Enter a city,airport,country etc" md-items="item in query(searchTex)" md-clear-button="true"
+                            required>
+    
+                            <md-item-template>
+                                <span class="item-title">
+    
+                                            <span> {{item.name}} </span>
+                                </span>
+                                <span class="item-metadata">
+                                            <span>
+                                                Type :<strong>{{item.type}}</strong> 
+                                            </span>
+                                <span>
+                                                Country :<strong>{{item.id}}</strong>
+                                            </span>
+                                </span>
+                            </md-item-template>
+                            <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                                <div ng-message="required">You <b>must</b> have a place in mind.</div>
+                            </div>
+                        </md-autocomplete>
+                            <!-- <input type="email" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Enter a city,airport,country etc"> -->
+                            <div class="form-check ">
+                                <label class="form-check-label text-white">
+                          <input type="checkbox" class="form-check-input" id="checkboxSuccess" value="option1">
+                          Direct Flights
+                        </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <!-- <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Email</label> -->
+                        <div class="col-md-3">
+                            <adm-dtp ng-model='dateFrom' ng-change="formatDate(dateFrom)" options='date1_options'></adm-dtp>
+                        </div>
+                        <div class="col-md-3">
+                            <adm-dtp ng-model='dateTo' ng-change="formatDate(dateTo)" options='date1_options'></adm-dtp>
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" ng-model="adult" placeholder="Adults" id="exampleSelect1">
+                                <option value="" selected>Adults</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                              </select>
+                            <!-- <input type="email" class="form-control" id="lgFormGroupInput" placeholder="Adults">					 -->
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" ng-model="child" placeholder="Adults" id="exampleSelect1">
+                                <option value="" selected>Child</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                              </select>
+                            <label for="" class="text-muted text-white">Under 12</label>
+
+                        </div>
+                        <div class="col-md-2">
+                            <select class="form-control" ng-model="infant" placeholder="Adults" id="exampleSelect1">
+                                <option value="" selected>Infant</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                              </select>
+                            <label for="" class="text-muted text-white">Under 2</label>
+
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="/flight/result" class="btn bg-yell btn-lg " ng-click="ctrl.search()">Search Flights</a>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
