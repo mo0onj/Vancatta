@@ -15,7 +15,7 @@ var morgan = require('morgan');
 // config files
 var db = require('./config/db');
 
-var port = process.env.PORT || 3000; // set our port
+var port = process.env.PORT || 80; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 
 // get all data/stuff of the body (POST) parameters
